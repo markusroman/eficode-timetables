@@ -4,10 +4,7 @@ import { useState } from 'react';
 
 export const useTimetables = (pointA, pointB) => {
   const [places, setPlaces] = useState([pointA, pointB]);
-  const [placeNames, setPlaceNames] = useState([
-    'Eficode HQ',
-    'Juustenintie 3'
-  ]);
+  const [placeNames, setPlaceNames] = useState(['Eficode HQ', 'TTY']);
   const [now, setNow] = useState(new Date());
 
   let from = places[0];

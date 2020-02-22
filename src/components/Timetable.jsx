@@ -15,9 +15,9 @@ const eficode = {
   lat: 60.198626,
   lon: 24.937843
 };
-const juustenintie = {
-  lat: 60.24499,
-  lon: 24.86876
+const tty = {
+  lat: 61.449821,
+  lon: 23.858629
 };
 
 const styles = theme => ({
@@ -31,9 +31,6 @@ const styles = theme => ({
   header: {
     padding: theme.spacing(4)
   },
-  itinerary: {
-    padding: theme.spacing(2)
-  },
   loading: {
     justifyContent: 'center',
     marginTop: theme.spacing(8)
@@ -41,7 +38,7 @@ const styles = theme => ({
 });
 
 const Timetable = props => {
-  const timetables = useTimetables(eficode, juustenintie);
+  const timetables = useTimetables(eficode, tty);
 
   const { classes } = props;
 
@@ -68,21 +65,14 @@ const Timetable = props => {
               variant="h4"
               className={classes.header}
             >
-              {itineraries.length} next itineraries from{' '}
-              {timetables.placeNames[0]} to {timetables.placeNames[1]}
+              From {timetables.placeNames[0]} to {timetables.placeNames[1]}
             </Typography>
           </Grid>
           {itineraries.map((item, index) => {
             return (
               <Grid item key={index} xs={7}>
                 <Paper className={classes.paper}>
-                  <Typography
-                    justify="center"
-                    align="center"
-                    className={classes.itinerary}
-                  >
-                    <Itinerary item={item} />
-                  </Typography>
+                  <Itinerary item={item} />
                 </Paper>
               </Grid>
             );
