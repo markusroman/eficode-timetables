@@ -26,6 +26,22 @@ export const useTimetables = (pointA, pointB) => {
     }
   });
 
+  const changeDestination = (newCoords, newName) => {
+    console.log('New destination', newName);
+    setPlaces([pointA, newCoords]);
+    setPlaceNames(['Eficode HQ', newName]);
+    refetch({
+      variables: {
+        fromLat: from.lat,
+        fromLon: from.lon,
+        toLat: to.lat,
+        toLon: to.lon,
+        date,
+        time
+      }
+    });
+  };
+
   const refresh = () => {
     setNow(new Date());
     console.log('Refetch');
@@ -61,6 +77,7 @@ export const useTimetables = (pointA, pointB) => {
     loading,
     data,
     error,
+    changeDestination,
     switchDirection,
     refresh,
     placeNames
