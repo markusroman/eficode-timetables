@@ -23,8 +23,8 @@ const secondsToDuration = secs => {
   var h = Math.floor(secs / 3600);
   var m = Math.floor((secs % 3600) / 60);
 
-  var hDisplay = h > 0 ? h + (h == 1 ? ' h ' : ' hours ') : '';
-  var mDisplay = m > 0 ? m + (m == 1 ? ' min' : ' minutes') : '';
+  var hDisplay = h > 0 ? h + (h === 1 ? ' h ' : ' hours ') : '';
+  var mDisplay = m > 0 ? m + (m === 1 ? ' min' : ' minutes') : '';
   return hDisplay + mDisplay;
 };
 
@@ -71,14 +71,13 @@ const parseLegs = legs => {
 
 const Itinerary = ({ item }) => {
   const legInfo = parseLegs(item.legs);
-  console.log(item.duration, item.duration % 60, item.duration / 3600);
   return (
     <>
       <Typography justify="center" align="center">
         {`${secondsToDisplay(item.startTime / 1000)} - ${secondsToDisplay(
           item.endTime / 1000
         )}   ||   Walking distance ${Math.round(item.walkDistance / 100) /
-          10} km   ||   total duration ${secondsToDuration(item.duration)}`}
+          10} km   ||   Total duration ${secondsToDuration(item.duration)}`}
       </Typography>
 
       <Grid container justify="center">

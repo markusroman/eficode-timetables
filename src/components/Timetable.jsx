@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import Radio from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { withStyles } from '@material-ui/core/styles';
 import Itinerary from './Itinerary';
@@ -63,7 +62,8 @@ const styles = theme => ({
     alignItems: 'center'
   },
   header: {
-    padding: theme.spacing(4)
+    padding: theme.spacing(3),
+    marginTop: theme.spacing(4)
   },
   loading: {
     justifyContent: 'center',
@@ -100,7 +100,7 @@ const Timetable = props => {
     <div>
       <CssBaseline>
         <Grid container className={classes.container} spacing={1}>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={11} sm={9} md={7}>
             <Paper className={classes.header}>
               <FormControl justify="center">
                 <RadioGroup
@@ -148,7 +148,7 @@ const Timetable = props => {
           </Grid>
           {itineraries.map((item, index) => {
             return (
-              <Grid item key={index} xs={7}>
+              <Grid item key={index} xs={11} sm={9} md={7}>
                 <Paper className={classes.paper}>
                   <Itinerary item={item} />
                 </Paper>
