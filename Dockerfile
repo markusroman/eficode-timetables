@@ -1,13 +1,19 @@
-FROM node:10
-
-WORKDIR /usr/src/app
-
-COPY package*.json .
-
-RUN npm install
-
+FROM node:10 as react-build
+ 
+WORKDIR /app
+ 
 COPY . .
-
-EXPOSE 3000
-
-CMD [ "npm", "run", "start" ]
+ 
+RUN npm install
+ 
+RUN npm run build
+ 
+ 
+ 
+FROM nginx:alpine
+ 
+COPY --from=react-build /app/build /usr/share/nginx/html
+ 
+EXPOSE 80
+ 
+CMD ["nginx", "-g", "daemon off;"]

@@ -118,7 +118,7 @@ const Timetable = props => {
                   />
                   <FormControlLabel
                     value="Kamppi"
-                    control={<Radio color="secondary" />}
+                    control={<Radio color="secondary" id="radio-Kamppi" />}
                     label="Kamppi"
                     labelPlacement="bottom"
                   />
@@ -158,6 +158,7 @@ const Timetable = props => {
           <Grid container className={classes.container} spacing={3}>
             <Grid item>
               <Button
+                id="refresh"
                 variant="contained"
                 color="secondary"
                 onClick={() => timetables.refresh()}
@@ -167,6 +168,7 @@ const Timetable = props => {
             </Grid>
             <Grid item>
               <Button
+                id="swap"
                 variant="contained"
                 color="secondary"
                 onClick={() => timetables.switchDirection()}
