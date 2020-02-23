@@ -24,7 +24,7 @@ const places = new Map([
     }
   ],
   [
-    'TTY',
+    'TUT',
     {
       lat: 61.449821,
       lon: 23.858629
@@ -45,7 +45,7 @@ const places = new Map([
     }
   ],
   [
-    'Lentokenttä',
+    'Airport',
     {
       lat: 60.314707,
       lon: 24.948027
@@ -111,9 +111,9 @@ const Timetable = props => {
                   row
                 >
                   <FormControlLabel
-                    value="TTY"
+                    value="TUT"
                     control={<Radio color="secondary" />}
-                    label="TTY"
+                    label="TUT"
                     labelPlacement="bottom"
                   />
                   <FormControlLabel
@@ -129,9 +129,9 @@ const Timetable = props => {
                     labelPlacement="bottom"
                   />
                   <FormControlLabel
-                    value="Lentokenttä"
+                    value="Airport"
                     control={<Radio color="secondary" />}
-                    label="Lentokenttä"
+                    label="Airport"
                     labelPlacement="bottom"
                   />
                 </RadioGroup>
@@ -158,7 +158,7 @@ const Timetable = props => {
           <Grid container className={classes.container} spacing={3}>
             <Grid item>
               <Button
-                id="refresh"
+                id="button-refresh"
                 variant="contained"
                 color="secondary"
                 onClick={() => timetables.refresh()}

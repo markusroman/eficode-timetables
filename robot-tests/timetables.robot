@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation                                       Tests for assuring the correct application functionality
 Library                                             SeleniumLibrary
-Suite Teardown Close All Browsers
+Suite Teardown                                      Close All Browsers
 
 *** Variables ***
 ${LOGIN URL}                                        https://timetables-markus.netlify.com
@@ -24,18 +24,18 @@ Init Tests
 *** Test Cases ***
 Website opens and loads correctly
     Init Tests
-    [Teardown] Close Browser
+    [Teardown]                                      Close Browser
 
 Destination can be changed
     Init Tests
-    Click Element                                   css:radio#radio-Kamppi
+    Click Element                                   css:#radio-Kamppi
     Sleep                                           8
     Wait Until Page Contains                        ${CHANGED HEADER}
-    [Teardown] Close Browser
+    [Teardown]                                      Close Browser
 
 Route direction can be switched
     Init Tests
-    Click Element                                   css:button#swap
+    Click Element                                   css:#swap
     Sleep                                           8
     Wait Until Page Contains                        ${SWAPPED HEADER}
-    [Teardown] Close Browser
+    [Teardown]                                      Close Browser
