@@ -41,7 +41,6 @@ export const useTimetables = (pointA, pointB) => {
 
   // Changes the destination point
   const changeDestination = (newCoords, newName) => {
-    console.log('New destination', newName);
     setPlaces([pointA, newCoords]);
     setPlaceNames(['Eficode HQ', newName]);
     refetch({
@@ -59,7 +58,6 @@ export const useTimetables = (pointA, pointB) => {
   // Fetches fresh itineraries
   const refresh = () => {
     setNow(new Date());
-    console.log('Refetch');
     refetch({
       variables: {
         fromLat: from.lat,
@@ -76,7 +74,6 @@ export const useTimetables = (pointA, pointB) => {
   const switchDirection = () => {
     setPlaces([to, from]);
     setPlaceNames([placeNames[1], placeNames[0]]);
-    console.log('Switch direction');
     refetch({
       variables: {
         fromLat: from.lat,

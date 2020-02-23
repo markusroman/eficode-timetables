@@ -13,6 +13,11 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', 'jest'],
+  settings: {
+    react: {
+      version: '^16.12.0'
+    }
+  },
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
