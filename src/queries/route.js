@@ -34,34 +34,8 @@ export const PLAN_ROUTE = gql`
         endTime
         legs {
           mode
-          startTime
-          endTime
-          from {
-            lat
-            lon
-            name
-            stop {
-              code
-              name
-            }
-          }
-          to {
-            lat
-            lon
-            name
-            stop {
-              code
-              name
-            }
-          }
           trip {
-            tripHeadsign
             routeShortName
-          }
-          distance
-          legGeometry {
-            length
-            points
           }
         }
       }

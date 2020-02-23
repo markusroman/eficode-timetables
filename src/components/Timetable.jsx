@@ -15,6 +15,7 @@ import Itinerary from './Itinerary';
 import SwapHorizRoundedIcon from '@material-ui/icons/SwapHorizRounded';
 import RefreshRoundedIcon from '@material-ui/icons/RefreshRounded';
 
+// Name and corresponding coordinates for specific places in a map.
 const places = new Map([
   [
     'Eficode HQ',
@@ -53,6 +54,11 @@ const places = new Map([
   ]
 ]);
 
+/**
+ * @description Creates the custom styles that are used in the component
+ * @param {object} theme
+ */
+
 const styles = theme => ({
   paper: {
     padding: theme.spacing(2)
@@ -71,11 +77,17 @@ const styles = theme => ({
   }
 });
 
+/**
+ * @description React component that renders all elements of the page. Keeps
+ * track of the currently chosen destination and handles events when regular
+ * or radio buttons are clicked.
+ */
 const Timetable = props => {
-  const [destination, setDestination] = useState('TTY');
-  const timetables = useTimetables(places.get('Eficode HQ'), places.get('TTY'));
+  const [destination, setDestination] = useState('TUT');
+  const timetables = useTimetables(places.get('Eficode HQ'), places.get('TUT'));
   const { classes } = props;
 
+  // Event handler for radio buttons
   const handleChange = event => {
     setDestination(event.target.value);
     timetables.changeDestination(
@@ -95,7 +107,9 @@ const Timetable = props => {
       </CssBaseline>
     );
   }
-  let itineraries = timetables.data.plan.itineraries;
+
+  // Queried data in a simpler form
+  const itineraries = timetables.data.plan.itineraries;
   return (
     <div>
       <CssBaseline>
