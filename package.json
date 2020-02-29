@@ -16,9 +16,11 @@
     "apollo-link-context": "^1.0.19",
     "apollo-link-http": "^1.5.16",
     "graphql": "^14.3.1",
+    "leaflet": "^1.6.0",
     "react": "^16.12.0",
     "react-apollo": "^3.0.0-beta.2",
     "react-dom": "^16.12.0",
+    "react-leaflet": "^2.6.1",
     "react-scripts": "3.4.0"
   },
   "scripts": {
