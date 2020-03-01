@@ -56,7 +56,7 @@ const places = new Map([
 
 /**
  * @description Creates the custom styles that are used in the component
- * @param {object} theme
+ * @param {object} theme Material-UI theme that provides primary and secondary colors and spacing
  */
 
 const styles = theme => ({
