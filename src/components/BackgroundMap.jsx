@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -8,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import '../map.css';
 const { BaseLayer } = LayersControl;
 
+// Access token for Mapbox map layers
 const ACCESS_TOKEN =
   'sk.eyJ1IjoibWFya3Vzcm9tYW4iLCJhIjoiY2s3OHEzNXh0MGhwczNsbnl5bm0zbWpjZSJ9.Yeq0LjbnbitSVkqHUH1cbg';
 
@@ -52,6 +51,10 @@ const styles = theme => ({
   }
 });
 
+/**
+ * @description An interactive map component that has multiple different layer options
+ * @param {} props provides the different classes for the component
+ */
 const BackgroundMap = props => {
   const { classes } = props;
 
@@ -127,6 +130,7 @@ const BackgroundMap = props => {
                   zoomOffset={-1}
                 />
               </BaseLayer>
+              {/* Creating a marker for every given place */}
               {places.map((item, index) => {
                 return (
                   <Marker position={[item.lat, item.lon]} key={index}>

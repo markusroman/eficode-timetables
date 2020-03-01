@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -48,6 +46,10 @@ const styles = theme => ({
   }
 });
 
+/**
+ * @description A react component for testing differen map functionalities
+ * without disrupting the actual map component
+ */
 const TestMap = props => {
   const { classes } = props;
 
