@@ -6,8 +6,8 @@ Suite Teardown                                      Close All Browsers
 *** Variables ***
 ${LOGIN URL}                                        https://timetables-markus.netlify.com
 ${BROWSER}                                          Chrome
-${DEFAULT HEADER}                                   From Eficode HQ to TTY
-${SWAPPED HEADER}                                   From TTY to Eficode HQ
+${DEFAULT HEADER}                                   From Eficode HQ to TUT
+${SWAPPED HEADER}                                   From TUT to Eficode HQ
 ${CHANGED HEADER}                                   From Eficode HQ to Kamppi
 ${TITLE}                                            Timetables Application
 
